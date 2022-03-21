@@ -1,3 +1,4 @@
+//item 4
 let pixelBox = document.getElementById('pixel-board');
 
 
@@ -15,3 +16,4 @@ function criaMatriz() {
   }
 }
 criaMatriz();
+
