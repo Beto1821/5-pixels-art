@@ -41,6 +41,6 @@
   max-width: fit-content;
 }
 
-.select {
-  color: black;
+.selected {
+  background-color: black;
 }
