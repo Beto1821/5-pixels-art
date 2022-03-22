@@ -41,13 +41,8 @@ function pixelColor(event) {
   console.log(color);
 }
 
-function changeColor() {
-  let pixelBoard = document.querySelectorAll('.pixel');
-  for (i = 0; i < pixelBoard.length; i += 1) {
-    pixelBoard[i].addEventListener('click', pixelColor);
-  console.log('clicou');
-  }
+let btn = document.querySelector('#clear-board');
 
-}
-
-
+btn.addEventListener('click', function() {
+  location.reload();
+});
