@@ -17,3 +17,6 @@ function criaMatriz() {
 }
 criaMatriz();
 
+//6
+
+

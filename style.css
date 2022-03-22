@@ -28,16 +28,19 @@
 }
 
 .pixel {
-    border: 1px solid black;
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    float: left;   
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  float: left;
 }
 
 #pixel-board {
- display: flex;
- flex-direction: column;
- max-width: fit-content;
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
 }
 
+.select {
+  color: black;
+}
