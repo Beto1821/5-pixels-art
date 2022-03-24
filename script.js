@@ -8,7 +8,7 @@ const Cblue = document.getElementsByClassName('blue');
 const Cgreen = document.getElementsByClassName('green');
 
 function criaMatriz(n) {
-  pixelBox.innerHTML= '';
+  pixelBox.innerHTML = '';
   for (let z = 1; z <= n; z += 1) {
     let row = document.createElement('div');
     row.className = 'linha';
@@ -44,7 +44,7 @@ function pixelColor(event) {
 
 let btn = document.querySelector('#clear-board');
 
-btn.addEventListener('click', function() {
+btn.addEventListener('click', function () {
   location.reload();
 });
 
@@ -52,15 +52,14 @@ btn.addEventListener('click', function() {
 let input = document.getElementById('board-size');
 
 function tamanhoQuadro() {
-  if (input.value < 5 && input.value > 0){
-    input.value = 5;
-  }else if (input.value > 50){
-    input.value = 50
-  }else if (!input.value) {
+  if (!input.value) {
     window.alert('Board inválido!');
-  }else { 
-    criaMatriz(input.value);
+  } else if (input.value > 50) {
+    input.value = 50;
+  } else if (input.value < 5 && input.value > 0) {
+    input.value = 5;
   }
+  criaMatriz(input.value);
 }
 const btn1 = document.getElementById('generate-board');
 btn1.addEventListener('click', tamanhoQuadro);
