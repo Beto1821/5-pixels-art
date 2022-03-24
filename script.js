@@ -7,11 +7,12 @@ const Cred = document.getElementsByClassName('red');
 const Cblue = document.getElementsByClassName('blue');
 const Cgreen = document.getElementsByClassName('green');
 
-function criaMatriz() {
-  for (let z = 1; z <= 5; z += 1) {
+function criaMatriz(n) {
+  pixelBox.innerHTML= '';
+  for (let z = 1; z <= n; z += 1) {
     let row = document.createElement('div');
     row.className = 'linha';
-    for (let i = 1; i <= 5; i += 1) {
+    for (let i = 1; i <= n; i += 1) {
       let box = document.createElement('div');
       box.className = 'pixel';
       box.addEventListener('click', pixelColor);
@@ -20,7 +21,7 @@ function criaMatriz() {
     pixelBox.appendChild(row);
   }
 }
-criaMatriz();
+criaMatriz(5);
 
 //7
 function seleciona(event) {
@@ -46,3 +47,16 @@ let btn = document.querySelector('#clear-board');
 btn.addEventListener('click', function() {
   location.reload();
 });
+
+//10
+let input = document.getElementById('board-size');
+
+function tamanhoQuadro() {
+  if (!input.value) {
+    window.alert('Board inválido!');
+  }else { 
+    criaMatriz(input.value);
+  }
+}
+const btn1 = document.getElementById('generate-board');
+btn1.addEventListener('click', tamanhoQuadro);
