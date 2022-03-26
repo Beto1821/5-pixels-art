@@ -1,11 +1,5 @@
-//item 4
-let paletaCores = document.getElementById('color-palette');
-let pixelBox = document.getElementById('pixel-board');
-let pixel = document.querySelector('.pixel');
-const Cblack = document.getElementsByClassName('black');
-const Cred = document.getElementsByClassName('red');
-const Cblue = document.getElementsByClassName('blue');
-const Cgreen = document.getElementsByClassName('green');
+const paletaCores = document.getElementById('color-palette');
+const pixelBox = document.getElementById('pixel-board');
 
 function criaMatriz(n) {
   pixelBox.innerHTML = '';
@@ -23,20 +17,34 @@ function criaMatriz(n) {
 }
 criaMatriz(5);
 
-//7
+function randomColors() {
+  const paletaDeCores = ['rgb(0, 0, 0)'];
+  const newColors = document.getElementsByClassName('color');
+  for (let i = 0; i < 3; i += 1) {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    paletaDeCores.push(`rgb(${r}, ${g}, ${b})`);
+  }
+  for (let z = 0; z < newColors.length; z += 1) {
+    newColors[z].style.backgroundColor = paletaDeCores[z];
+  }
+}
+
+randomColors();
+
 function seleciona(event) {
-  let eraSelecionada = document.querySelector('.selected');
+  const eraSelecionada = document.querySelector('.selected');
   eraSelecionada.classList.remove('selected');
   event.target.classList.add('selected');
   console.log(getComputedStyle(event.target).backgroundColor);
 }
 paletaCores.addEventListener('click', seleciona);
 
-//8
-
 function pixelColor(event) {
-  let paleta = document.querySelector('.selected');
-  let color = getComputedStyle(paleta).backgroundColor;
+
+  const paleta = document.querySelector('.selected');
+  const color = getComputedStyle(paleta).backgroundColor;
   event.target.style.backgroundColor = color;
   console.log(event.target);
   console.log(color);
@@ -48,8 +56,7 @@ btn.addEventListener('click', function () {
   location.reload();
 });
 
-//10
-let input = document.getElementById('board-size');
+const input = document.getElementById('board-size');
 
 function tamanhoQuadro() {
   if (!input.value) {
@@ -63,4 +70,3 @@ function tamanhoQuadro() {
 }
 const btn1 = document.getElementById('generate-board');
 btn1.addEventListener('click', tamanhoQuadro);
-
