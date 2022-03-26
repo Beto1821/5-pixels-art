@@ -63,3 +63,4 @@ function tamanhoQuadro() {
 }
 const btn1 = document.getElementById('generate-board');
 btn1.addEventListener('click', tamanhoQuadro);
+
