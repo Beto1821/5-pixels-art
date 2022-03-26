@@ -18,16 +18,16 @@ function criaMatriz(n) {
 criaMatriz(5);
 
 function randomColors() {
-  const paletaDeCores = ['rgb(0, 0, 0)'];
-  const newColors = document.getElementsByClassName('color');
+  const color = ['rgb(0, 0, 0)'];
+  const colors = document.getElementsByClassName('color');
   for (let i = 0; i < 3; i += 1) {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
-    paletaDeCores.push(`rgb(${r}, ${g}, ${b})`);
+    color.push(`rgb(${r}, ${g}, ${b})`);
   }
-  for (let z = 0; z < newColors.length; z += 1) {
-    newColors[z].style.backgroundColor = paletaDeCores[z];
+  for (let z = 0; z < colors.length; z += 1) {
+    colors[z].style.backgroundColor = color[z];
   }
 }
 
